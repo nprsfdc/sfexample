@@ -1,0 +1,16 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+    
+    <aura:attribute name="recordId" type="Id"  />
+    <aura:attribute name="rec" type="Object"/>
+    <force:recordData aura:id="accRecord" recordId="{!v.recordId}"
+                      recordUpdated="{!c.handleRecordUpdated}"
+                      fields="OwnerId"
+                      targetFields="{!v.rec}"/>
+    
+    <aura:attribute name="ownerId" type="Id"/>
+    
+    <aura:if isTrue="{!v.ownerId!=null}">
+        <c:UserImageAvatar uId="{!v.ownerId}"/> 
+    </aura:if> 
+    
+</aura:component>

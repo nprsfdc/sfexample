@@ -1,0 +1,11 @@
+<aura:component >
+    <aura:attribute name="userRecord" type="User"/>
+    <aura:attribute name="uId" type="Id"  />
+    <force:recordData recordId="{!v.uId}"
+                      aura:id="recordData"
+                      targetFields="{!v.userRecord}"
+                      fields="FullPhotoUrl, Name, SmallPhotoUrl" />
+    
+    <img src="{!v.userRecord.FullPhotoUrl}" /> <br/>
+    {!v.userRecord.Name}
+</aura:component>
